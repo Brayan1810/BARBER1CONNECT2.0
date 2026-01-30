@@ -1,0 +1,215 @@
+<!-- ================= SCHEDULE / HERO TARJETAS FIFA ================= -->
+<!-- Archivo: html/schedule.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"> <!-- Codificación correcta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+    <title>Agendar cita | Barber1Connect</title>
+
+    <link rel="stylesheet" href="../css/header.css"> <!-- Estilos del header -->
+    <link rel="stylesheet" href="../css/footer.css"> <!-- Estilos del footer -->
+    <link rel="stylesheet" href="../css/schedule.css"> <!-- Estilos del schedule -->
+    <link rel="stylesheet" href="../css/barbers.css"> <!-- Estilos del hero barberos -->
+    <link rel="stylesheet" href="../css/calendar.css"> <!-- Estilos del calendario -->
+    <link rel="stylesheet" href="../css/confirm.css"> <!-- Estilos del confirm -->
+
+
+
+</head>
+
+<body>
+
+    <!-- CONTENEDOR HEADER -->
+    <div id="header"></div> <!-- Aquí se inyecta header.html -->
+
+    <!-- ================= HERO ================= -->
+    <section class="schedule-hero"> <!-- Hero principal -->
+
+        <div class="schedule-overlay"> <!-- Capa oscura -->
+
+            <div class="schedule-box"> <!-- Caja oscura translúcida -->
+
+                <h1 class="schedule-title">ELIGE EL SERVICIO</h1> <!-- Título principal -->
+
+                <!-- ===== TARJETAS FIFA ===== -->
+                <div class="fifa-container"> <!-- Contenedor general -->
+
+                    <!-- Tarjeta -->
+                    <button class="fifa-card" data-cut="corte clasico">
+                        <img src="../img/cortes/corte6b.jpeg" alt="Urbano">
+                        <h3> Corte ⭐Profesional⭐</h3>
+                        <ul>
+                            <p>✂️ Corte de cabello ✂️</p>
+                            <p>✒️ Diseño de cejas ✒️</p>
+                            <p>🎓 Guía personalizada🎓</p>
+                            <p>💯 Calidad garantizada💯</p>
+                            <p>💵 Valor: 25.000💵</p>
+                        </ul>
+                    </button>
+
+                    <button class="fifa-card" data-cut="CORTE + CEJAS">
+                        <img src="../img/cortes/corte8b.jpeg" alt="Corte Clásico">
+                        <div class="servicio">
+                            <h3>Combo VIP ⭐Barba⭐</h3>
+                            <p>✂️ Corte de cabello ✂️</p>
+                            <p>🧔 Ritual de barba 🧔</p>
+                            <p>🎓 Asesoría de imagen 🎓</p>
+                            <p>💵 Valor: 25.000💵</p> 
+                        </div>
+                    </button>
+
+                    <button class="fifa-card" data-cut="CORTE ">
+                        <img src="../img/cortes/corte5b.jpeg" alt="Barba">
+                        <div class="servicio">
+                            <div class="servicio">
+                                <h3>Combo ⭐Definición⭐</h3>
+                                <p>✂️ Corte de cabello ✂️</p>
+                                <p>🧔 Arreglo de barba 🧔</p>
+                                <p>🤨 Diseño de cejas 🤨</p>
+                                <p>💵 Valor: 25.000💵</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button class="fifa-card" data-cut="lineas">
+                        <img src="../img/corte1.jpg" alt="Diseños">
+                         <div class="servicio"> 
+                                <h3>Combo ⭐Definición⭐</h3>
+                                <p>✂️ Corte de cabello ✂️</p>
+                                <p>🧔 Arreglo de barba 🧔</p>
+                                <p>🤨 Diseño de cejas 🤨</p>
+                                <p>💵 Valor: 25.000💵</p> 
+                            </div>         
+                    </button>
+                    <button class="fifa-card" data-cut="juvenil">
+                        <img src="../img/cortes/corte7b.jpeg" alt="Juvenil">
+                            <h3>Combo VIP  ⭐SpaBarber⭐</h3>
+                            <p>✂️ Corte de cabello ✂️</p>
+                            <p>🧔 Perfilado de barba 🧔</p>
+                            <p>🎭 Mascarilla facial 🎭</p>
+                            <p>💵 Valor: 25.000💵</p>
+                            
+                    </button>
+
+                    <button class="fifa-card" data-cut="premium">
+                        <img src="../img/corte2.jpg" alt="Premium">
+                        <div class="servicio">
+                            <h3>Corte VIP ⭐Profesional⭐</h3>
+                            <p>✂️ Corte de cabello✂️</p>
+                            <p>⚡Diseño Freestyle⚡</p>
+                            <p>🎓 Guía personalizada🎓</p>
+                            <p>💵 Valor: 25.000💵</p>                     
+                        </div>
+                    </button>
+                </div>
+                <!-- ===== FIN TARJETAS ===== -->
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= FIN HERO ================= -->
+
+    <!-- CONTENEDOR HERO BARBEROS -->
+
+    <div id="barbers"></div>
+    <!-- ================= HERO CALENDARIO ================= -->
+<!-- Aquí se cargará calendar.html dinámicamente -->
+    <div id="calendar"></div>
+
+
+    <!-- CONTENEDOR FOOTER -->
+    <div id="footer"></div> <!-- Aquí se inyecta footer.html -->
+
+    <script src="../js/header.js"></script> <!-- JS header -->
+    <script src="../js/footer.js"></script> <!-- JS footer -->
+    <script src="../js/schedule.js"></script> <!-- JS schedule -->
+    <script src="../js/barbers.js"></script> <!-- JS hero barberos -->
+    
+        <!-- ================= MODAL CONFIRMACIÓN DE CITA ================= -->
+    <!-- Este modal permite confirmar la cita sin recargar la página -->
+    <div id="confirmModal" class="modal"> <!-- Contenedor general del modal (oculto por defecto) -->
+         
+
+        <div class="modal-content"> <!-- Caja central del modal donde va todo el contenido -->
+            
+            <img src="../img/logo.png" class="logo" alt="Logo Barber1Connect">
+
+            <h2 class="modal-title">Confirma tu cita</h2> 
+            <!-- Título principal del modal -->
+
+            <!-- ===== RESUMEN DE LA CITA ===== -->
+            <div class="confirm-summary"> <!-- Sección donde se muestra el resumen -->
+
+                <p><strong>Servicio:</strong> <span id="summary-service"></span></p> 
+                <!-- Muestra el servicio seleccionado -->
+
+                <p><strong>Barbero:</strong> <span id="summary-barber"></span></p> 
+                <!-- Muestra el barbero elegido -->
+
+                <p><strong>Fecha:</strong> <span id="summary-date"></span></p> 
+                <!-- Muestra la fecha formateada -->
+
+                <p><strong>Hora:</strong> <span id="summary-time"></span></p> 
+                <!-- Muestra la hora seleccionada -->
+
+            </div>
+
+            <!-- ===== FORMULARIO DEL CLIENTE ===== -->
+            <form id="confirmForm"> <!-- Formulario para capturar datos del cliente -->
+
+                <input type="text" id="name" placeholder="Nombre *" required> 
+                <!-- Campo obligatorio para el nombre -->
+
+                <input type="text" id="lastname" placeholder="Apellido *" required> 
+                <!-- Campo obligatorio para el apellido -->
+
+                <input type="tel" id="phone" placeholder="Teléfono *" required> 
+                <!-- Campo obligatorio para el teléfono -->
+
+                <textarea id="notes" placeholder="Recomendaciones (opcional)"></textarea> 
+                <!-- Campo opcional para comentarios -->
+
+                <div class="social-buttons">
+                 <button
+                        id="googleLoginBtn"
+                        type="button"
+                        >
+                        Continuar con Google
+                 </button>
+                 <!-- Mensaje de validación UX para completar datos obligatorios -->
+                <button class="btn-google">Continuar con Google</button>
+                </p>
+
+                    <button class="btn-facebook">Continuar con Facebook</button>
+                </div>
+                <!-- Botones para login social (futuros) -->
+
+                <button type="submit" class="btn-confirm">Confirmar cita</button> 
+                <!-- Botón principal para confirmar la cita -->
+
+                <button type="button" id="changeCita" class="btn-back">Cambiar cita</button> 
+                <!-- Botón para cerrar el modal y cambiar selección -->
+
+            </form>
+
+        </div>
+    </div>
+    <!-- ================= FIN MODAL ================= -->
+    <script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/auth-google.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
+
+<!-- ================= FIN SCHEDULE ================= -->

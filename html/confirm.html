@@ -1,0 +1,99 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 para todo el proyecto BARBER1CONNECT2.0 -->
+<html lang="es"> <!-- Inicia el documento HTML y define el idioma español para accesibilidad y SEO -->
+
+<head> <!-- Contenedor de configuraciones y recursos del documento -->
+    <meta charset="UTF-8"> <!-- Permite usar caracteres especiales en todo el sistema -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace el diseño responsive en móviles y escritorio -->
+    <title>Confirmar cita | BARBER1CONNECT2.0</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="../css/confirm.css"> <!-- Conecta el CSS exclusivo de la pantalla de confirmación -->
+</head> <!-- Fin de la configuración del documento -->
+
+<body> <!-- Cuerpo visible del sistema para el usuario -->
+
+    <!-- ================= HERO CONFIRMACIÓN DE CITA ================= -->
+    <section class="confirm-hero"> <!-- Hero principal donde el usuario confirma su cita -->
+
+        <div class="confirm-container"> <!-- Contenedor central que limita el ancho y centra el contenido -->
+
+            <h1 class="confirm-title">Confirma tu cita</h1> <!-- Título principal que indica el paso actual del flujo -->
+
+            <!-- ================= RESUMEN DE LA CITA ================= -->
+            <div class="confirm-summary"> <!-- Bloque que muestra el resumen de la cita seleccionada -->
+
+                <h2 class="summary-title">Resumen de tu cita</h2> <!-- Subtítulo del resumen para claridad UX -->
+
+                <p class="summary-item"> <!-- Línea informativa del resumen -->
+                    <span class="label">Servicio:</span> <!-- Etiqueta que indica el tipo de dato -->
+                    <span id="summary-service">Corte clásico</span> <!-- Valor del servicio (se llena desde JS) -->
+                </p>
+
+                <p class="summary-item"> <!-- Línea informativa del resumen -->
+                    <span class="label">Barbero:</span> <!-- Etiqueta del barbero -->
+                    <span id="summary-barber">Brayan</span> <!-- Nombre del barbero seleccionado -->
+                </p>
+
+                <p class="summary-item"> <!-- Línea informativa del resumen -->
+                    <span class="label">Fecha:</span> <!-- Etiqueta de fecha -->
+                    <span id="summary-date">15/01/2026</span> <!-- Fecha seleccionada -->
+                </p>
+
+                <p class="summary-item"> <!-- Línea informativa del resumen -->
+                    <span class="label">Hora:</span> <!-- Etiqueta de hora -->
+                    <span id="summary-time">3:00 PM</span> <!-- Hora seleccionada -->
+                </p>
+
+            </div> <!-- Fin del resumen de la cita -->
+
+            <!-- ================= FORMULARIO DATOS DEL CLIENTE ================= -->
+            <form class="confirm-form"> <!-- Formulario principal para capturar datos del cliente -->
+
+                <h2 class="form-title">Datos del cliente</h2> <!-- Título del formulario -->
+
+                <div class="form-group"> <!-- Grupo de campo para el nombre -->
+                    <label for="name">Nombre *</label> <!-- Etiqueta del campo nombre -->
+                    <input type="text" id="name" placeholder="Tu nombre" required> <!-- Campo obligatorio para el nombre del cliente -->
+                </div>
+
+                <div class="form-group"> <!-- Grupo de campo para el apellido -->
+                    <label for="lastname">Apellido *</label> <!-- Etiqueta del campo apellido -->
+                    <input type="text" id="lastname" placeholder="Tu apellido" required> <!-- Campo obligatorio para el apellido -->
+                </div>
+
+                <div class="form-group"> <!-- Grupo de campo para el teléfono -->
+                    <label for="phone">Teléfono *</label> <!-- Etiqueta del campo teléfono -->
+                    <input type="tel" id="phone" placeholder="Ej: 3101234567" required> <!-- Campo obligatorio para contacto -->
+                </div>
+
+                <div class="form-group"> <!-- Grupo de campo para recomendaciones opcionales -->
+                    <label for="notes">Recomendaciones (opcional)</label> <!-- Etiqueta para comentarios adicionales -->
+                    <textarea id="notes" placeholder="Ej: corte bajo, barba corta, etc."></textarea> <!-- Campo opcional para detalles del cliente -->
+                </div>
+
+                <!-- ================= OPCIONES DE LOGIN OPCIONAL ================= -->
+                <div class="optional-login"> <!-- Contenedor para login social opcional -->
+
+                    <p class="optional-text">O continúa con</p> <!-- Texto indicativo de opción alternativa -->
+
+                    <button type="button" class="btn-social google">Google</button> <!-- Botón futuro para login con Google -->
+                    <button type="button" class="btn-social facebook">Facebook</button> <!-- Botón futuro para login con Facebook -->
+
+                </div> <!-- Fin de opciones de login -->
+
+                <!-- ================= BOTÓN CONFIRMAR ================= -->
+                <button type="submit" class="btn-confirm">Confirmar cita</button> <!-- Botón principal que confirma la cita -->
+
+                <!-- ================= BOTÓN CAMBIAR CITA ================= -->
+                <button type="button" class="btn-back">
+                    Cambiar cita
+                </button> <!-- Botón secundario para regresar y modificar la cita -->
+
+            </form> <!-- Fin del formulario -->
+
+        </div> <!-- Fin del contenedor central -->
+
+    </section> <!-- Fin del hero de confirmación -->
+
+    <script src="../js/confirm.js"></script> <!-- Conecta el JavaScript exclusivo de esta pantalla -->
+</body> <!-- Fin del cuerpo del documento -->
+
+</html> <!-- Fin del documento HTML -->

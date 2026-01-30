@@ -1,0 +1,170 @@
+/* ================= HEADER GLOBAL ================= */
+
+/* Contenedor principal del header */
+.header {
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: rgba(29, 29, 29, 0.95); /* Fondo negro elegante */
+    border-bottom: 1px solid white; /* Borde blanco */
+    position: fixed; /* Fijo arriba */
+    top: 0;
+    z-index: 1000;
+     /* padding: 20px 0;  Aumenta altura del header sin romper layout */
+}
+
+/* Contenedor interno */
+.header-container {
+    max-width: 1200px; /* Ancho máximo */
+    margin: auto; /* Centrado */
+    padding: 15px 20px; /* Espaciado */
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Logo izquierda, menú derecha */
+    align-items: center;
+    
+}
+
+/* Logo */
+.logo {
+    width: 200px; /* Tamaño logo */
+}
+
+/* Menú principal */
+.menu {
+    display: flex; /* Opciones en fila */
+    gap: 30px; /* Separación */
+    list-style: none;
+}
+
+/* Enlaces */
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover */
+.menu a:hover {
+    color: #d4af37;
+}
+
+/* ================= SUBMENÚ ================= */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Mostrar submenú */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* ================= MENÚ MÓVIL ================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block; /* Muestra hamburguesa */
+    }
+
+    .nav {
+        position: absolute; /* Saca el menú del flujo */
+        top: 100%; /* Justo debajo del header */
+        left: 0; /* Alineado a la izquierda */
+        width: 100%; /* Ocupa todo el ancho */
+        background-color: rgba(0,0,0,0.97); /* Fondo elegante */
+        border-top: 1px solid white; /* Separación visual */
+        display: none; /* Oculto por defecto */
+    }
+
+    .nav.active {
+        display: block; /* Se muestra sin agrandar header */
+    }
+
+    .menu {
+        flex-direction: column; /* Opciones en columna */
+        padding: 20px 0; /* Espaciado interno */
+    }
+
+    .menu li {
+        padding: 15px 0; /* Espacio entre opciones */
+    }
+}
+/* ================= SLIDER SUPERIOR ================= */
+
+/* Sección general del slider */
+.slider {
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Slider arriba, botones abajo */
+    align-items: center; /* Centrado horizontal */
+    margin: 20px 0 40px 0; /* MUCHO más arriba */
+}
+
+/* Contenedor visual del slider */
+.slider-container {
+    width: 92%; /* Ancho elegante */
+    max-width: 1100px; /* Limite en PC */
+    height: 200px; /* Altura controlada */
+    position: relative; /* Referencia interna */
+    overflow: hidden; /* Oculta desbordes */
+    border-radius: 18px; /* Bordes suaves */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6); /* Profundidad */
+}
+
+/* Slides */
+.slide {
+    position: absolute; /* Se superponen */
+    inset: 0; /* Ocupa todo el contenedor */
+    opacity: 0; /* Ocultos */
+    transition: opacity 0.8s ease; /* Fade */
+}
+
+/* Slide activo */
+.slide.active {
+    opacity: 1; /* Visible */
+}
+
+/* Imagen */
+.slide img {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Sin deformar */
+}
+
+/* ================= CONTROLES FUERA ================= */
+
+.slider-controls {
+    margin-top: 15px; /* Separación del slider */
+    display: flex; /* Botones en fila */
+    gap: 25px; /* Espacio entre botones */
+}
+
+/* Botones */
+.slider-btn {
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    border: 1px solid white;
+    padding: 10px 18px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Hover botones */
+.slider-btn:hover {
+    background-color: #d4af37;
+    color: black;
+}

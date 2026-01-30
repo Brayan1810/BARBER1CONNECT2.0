@@ -1,0 +1,416 @@
+/* ================= CONFIGURACIÓN GLOBAL ================= */
+
+/* Resetea márgenes y paddings por defecto */
+* {
+    margin: 0; /* Elimina margen externo en todos los elementos */
+    padding: 0; /* Elimina relleno interno en todos los elementos */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente base del proyecto */
+    background-color: #000000; /* Fondo negro base */
+    color: #ffffff; /* Texto blanco general */
+}
+
+
+
+/* ================= HERO (FONDO CON IMAGEN) ================= */
+
+.hero {
+    height: 100vh; /* Ocupa toda la pantalla */
+    background-image: url('../img/fondo.jpg'); /* Imagen de fondo personalizable */
+    background-size: cover; /* Imagen cubre toda el área */
+    background-position: center; /* Imagen centrada */
+    display: flex; /* Flexbox activo */
+    justify-content: center; /* Centra horizontal */
+    align-items: center; /* Centra vertical */
+    text-align: center; /* Texto centrado */
+}
+
+/* Capa oscura para mejorar lectura */
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece fondo */
+    padding: 50px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+/* ================= TÍTULOS ================= */
+
+.hero h1 {
+    font-size: 42px; /* Tamaño grande del título */
+    color: #d4af37; /* Color dorado llamativo */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6); /* Brillo dorado */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.hero p {
+    font-size: 18px; /* Tamaño del texto */
+    margin-bottom: 25px; /* Espacio inferior */
+}
+
+.hero h2 {
+    font-size: 26px; /* Tamaño del slogan */
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 35px; /* Espacio inferior */
+}
+
+/* ================= BOTONES ================= */
+
+.hero-buttons {
+    display: flex; /* Flexbox */
+    gap: 25px; /* Espacio entre botones */
+    justify-content: center; /* Centra botones */
+}
+
+/* Estilo base de botones */
+.btn {
+    padding: 15px 35px; /* Tamaño grande del botón */
+    font-weight: bold; /* Texto fuerte */
+    text-decoration: none; /* Quita subrayado */
+    border-radius: 30px; /* Bordes bien redondeados */
+    transition: all 0.3s ease; /* Animación suave */
+   
+    
+}
+
+/* ================= BOTÓN AGENDA RÁPIDA ================= */
+
+.btn-primary {
+    background-color: #000000; /* Fondo negro interno */
+    color: #ffffff; /* Texto blanco */
+    border: 2px solid #ffffff; /* Borde blanco */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Sombra blanca */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Sombra blanca */
+}
+
+
+/* Hover del botón agenda */
+.btn-primary:hover {
+    background-color: #d4af37; /* Fondo dorado */
+    color: #000000; /* Texto negro */
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.9); /* Sombra dorada */
+    transform: scale(1.05); /* Efecto de crecimiento */
+}
+
+/* Efecto al hacer clic */
+.btn-primary:active {
+    transform: scale(0.95); /* Efecto de presión */
+}
+
+/* ================= BOTÓN SECUNDARIO ================= */
+
+.btn-secondary {
+    border: 2px solid #d4af37; /* Borde dorado */
+    color: #d4af37; /* Texto dorado */
+}
+
+/* Hover botón secundario */
+.btn-secondary:hover {
+    background-color: #d4af37; /* Fondo dorado */
+    color: #000000; /* Texto negro */
+}
+
+
+/* ================= DISEÑO PARA MÓVILES ================= */
+@media (max-width: 768px) {
+    /* ================= BOTÓN HAMBURGUESA ================= */
+
+    /* Botón oculto por defecto (desktop) */
+    .menu-toggle {
+        display: none; /* No se muestra en pantallas grandes */
+        background: none; /* Sin fondo */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cursor clic */
+    }
+
+    /* Líneas del ícono */
+    .menu-toggle span {
+        display: block; /* Cada línea ocupa una fila */
+        width: 30px; /* Ancho de la línea */
+        height: 3px; /* Grosor */
+        background-color: #ffffff; /* Color blanco */
+        margin: 6px 0; /* Separación entre líneas */
+    }
+
+
+    /* Ajusta el logo en pantallas pequeñas */
+    .logo {
+        width: 110px; /* Logo más pequeño en móvil */
+    }
+
+    /* Menú en columna */
+    .menu {
+        flex-direction: column; /* Opciones una debajo de otra */
+        gap: 15px; /* Menor separación */
+        align-items: center; /* Centra el menú */
+    }
+
+    /* Hero más flexible */
+    .hero {
+        height: auto; /* Evita cortes en móvil */
+        padding: 60px 20px; /* Espacio interno */
+    }
+
+    /* Caja de texto del hero */
+    .hero-content {
+        padding: 30px; /* Reduce padding */
+    }
+
+    /* Título principal */
+    .hero h1 {
+        font-size: 28px; /* Tamaño legible en móvil */
+    }
+
+    /* Subtítulo */
+    .hero h2 {
+        font-size: 20px; /* Reduce tamaño */
+    }
+
+    /* Texto */
+    .hero p {
+        font-size: 16px; /* Texto cómodo */
+    }
+
+    /* Botones en columna */
+    .hero-buttons {
+        flex-direction: column; /* Botones uno debajo del otro */
+        gap: 15px; /* Menor espacio */
+    }
+
+    /* Botones ocupan ancho */
+    .btn {
+        width: 100%; /* Botón ancho completo */
+        text-align: center; /* Texto centrado */
+    }
+
+    /* Logo a la izquierda */
+    .logo {
+        margin: 0; /* Quita márgenes extras */
+    }
+
+
+
+}
+/* ================= SLIDER CENTRADO ================= */
+
+/* Sección general */
+.slider {
+    width: 100%; /* Ancho completo para centrar */
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centra horizontal */
+    margin: 120px 0; /* Separación elegante */
+    border: 1px solid white;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    width: 90%; /* No ocupa toda la pantalla */
+    max-width: 1200px; /* Tamaño elegante en PC */
+    height: 200px; /* Altura estética */
+    position: relative; /* Referencia para botones */
+    overflow: hidden; /* Oculta exceso */
+    border-radius: 20px; /* Bordes suaves */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6); /* Profundidad */
+}
+
+/* Cada slide */
+.slide {
+    position: absolute; /* Se superponen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el contenedor */
+    height: 100%; /* Altura completa */
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.8s ease; /* Fade suave */
+}
+
+/* Slide visible */
+.slide.active {
+    opacity: 1; /* Muestra el slide activo */
+}
+
+/* Imagen */
+.slide img {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Sin deformar */
+}
+
+/* ================= BOTONES ================= */
+
+.slider-btn {
+    position: absolute; /* Encima del slider */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border: 1px solid white;
+    padding: 12px 18px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Hover botones */
+.slider-btn:hover {
+    background-color: #d4af37;
+    color: black;
+}
+
+/* Botón izquierdo */
+.prev {
+    left: 20px;
+}
+
+/* Botón derecho */
+.next {
+    right: 20px;
+}
+/* ================= PUNTOS DEL SLIDER ================= */
+
+.slider-dots {
+    position: absolute; /* Se posiciona dentro del slider */
+    bottom: 15px; /* Abajo del slider */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%);
+    display: flex; /* Puntos en línea */
+    gap: 10px; /* Separación entre puntos */
+    z-index: 10; /* Encima de las imágenes */
+}
+
+.dot {
+    width: 10px; /* Tamaño del punto */
+    height: 10px;
+    border-radius: 50%; /* Forma circular */
+    background-color: rgba(255,255,255,0.5); /* Color suave */
+    cursor: pointer; /* Indica interacción */
+    transition: all 0.3s ease; /* Animación */
+}
+
+.dot.active {
+    background-color: #d4af37; /* Dorado activo */
+    transform: scale(1.2); /* Destaca el punto */
+}
+
+/* ================= AJUSTES SOLO MÓVIL ================= */
+@media (max-width: 768px) {
+
+    /* Oculta botones en móvil */
+    .slider-btn {
+        display: none; /* No se muestran */
+    }
+
+    /* Slider más compacto en móvil */
+    .slider-container {
+        height: 180px; /* Altura optimizada */
+    }
+}
+/* ================= HERO TRABAJOS ================= */
+
+.work-hero {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+/* Título */
+.work-hero h2 {
+    color: #d4af37;
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+/* Galería */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* Hover efecto subir */
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(212,175,55,0.4);
+}
+/* Título flotante */
+.work-title {
+    position: absolute; /* Flota sobre la imagen */
+    top: 15px; /* Separación desde arriba */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste exacto */
+    
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro elegante */
+    color: #ffffff; /* Dorado barber */
+    
+    padding: 8px 18px; /* Espacio interno */
+    border-radius: 20px; /* Bordes suaves */
+    
+    font-size: 14px; /* Tamaño legible */
+    font-weight: bold; /* Texto fuerte */
+    letter-spacing: 1px; /* Toque urbano */
+    
+    z-index: 5; /* Siempre encima de la imagen */
+    pointer-events: none; /* No bloquea clics */
+}
+
+/* ================= MÓVIL ================= */
+@media (max-width: 768px) {
+
+    .work-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= FUENTE URBANA PARA TÍTULOS ================= */
+
+h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif; /* Fuente urbana */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+/* ================= IMÁGENES DOBLES CON HOVER ================= */
+
+/* Contenedor de la tarjeta */
+.work-card {
+    position: relative; /* Permite superponer imágenes */
+    aspect-ratio: 1 / 1; /* 🟩 Hace la tarjeta perfectamente cuadrada */
+     border: 1px solid white; /* Borde blanco elegante */
+     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo común para ambas imágenes */
+.work-card img {
+    position: absolute; /* Se colocan una sobre otra */
+    top: 0; /* Pegadas arriba */
+    left: 0; /* Pegadas a la izquierda */
+    width: 100%; /* Ocupan todo el ancho */
+    height: 100%; /* Ocupan toda la altura */
+    object-fit: cover; /* No se deforman */
+    transition: opacity 0.4s ease; /* Cambio suave */
+}
+
+/* Imagen principal visible */
+.work-card .img-main {
+    opacity: 1; /* Visible por defecto */
+}
+
+/* Imagen secundaria oculta */
+.work-card .img-hover {
+    opacity: 0; /* Oculta al inicio */
+}
+
+/* Hover: cambia imagen */
+.work-card:hover .img-main {
+    opacity: 0; /* Se oculta al salir */
+}
+
+.work-card:hover .img-hover {
+    opacity: 1; /* Se muestra */
+}
+    .work-title {
+        font-size: 13px; /* Un poco más pequeño */
+        padding: 6px 14px; /* Ajuste móvil */
+    }

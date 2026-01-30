@@ -1,0 +1,136 @@
+/* ========================================================= */
+/* 🧔 HERO SELECCIÓN BARBERO */
+/* Archivo: css/barbers.css */
+/* ========================================================= */
+
+.barber-hero {
+    width: 100%; /* Ancho completo */
+    display: flex; /* Se controla desde el contenedor padre */
+    justify-content: center; /* Centrado horizontal */
+    padding: 60px 0; /* Espaciado vertical */
+}
+
+/* Caja central */
+/* Caja oscura barberos */
+.barber-box {
+     width: fit-content; /* 🔑 Se ajusta al contenido */
+    max-width: 100%; /* Seguridad */
+    background: rgba(15, 15, 15, 0.85); /* Oscuro elegante */
+    border-radius: 20px; /* Bordes suaves */
+    padding: 30px; /* Aire interno */
+}
+
+
+/* Título */
+/* Título sección barberos */
+.barber-title {
+    text-align: center; /* Centra texto */
+    color: #ffffff; /* Dorado premium */
+    font-size: 1.7rem; /* Tamaño grande */
+    margin-bottom: 35px; /* Separación */
+    text-transform: uppercase; /* Estilo fuerte */
+    letter-spacing: 2px; /* Espaciado letras */
+}
+
+
+/* ================= CONTENEDOR BARBEROS ================= */
+.barber-container {
+    display: flex; /* 🔑 MISMO MODELO EN TODOS LOS TAMAÑOS */
+    justify-content: center; /* PC */
+    gap: 20px; /* Espaciado */
+    max-width: 450px; /* Limita ancho en desktop */
+    margin: 0 auto; /* Centrado */
+}
+
+/* Tarjeta */
+/* Tarjeta barbero (PC) */
+.barber-card {
+    background: linear-gradient(145deg, #ffffff, #1c1c1c); /* Estilo FIFA */
+    border-radius: 40px; /* Bordes redondeados */
+    padding: 18px; /* Espaciado interno */
+    text-align: center; /* Centra contenido */
+    color:  #ffffff; /* Texto blanco */
+    cursor: pointer; /* Interactivo */
+    transition: all 0.35s ease; /* Animaciones suaves */
+
+    border: 2px solid rgba(255, 255, 255, 0.9); /* BORDE BLANCO */
+    box-shadow: 
+        0 0 12px rgba(255, 255, 255, 0.35), /* Glow blanco */
+        inset 0 0 10px rgba(255, 255, 255, 0.08); /* Brillo interno */
+}
+
+
+
+/* Imagen de perfil del barbero */
+.barber-card img {
+    width: 150px; /* Tamaño fijo para mantener proporción */
+    height: 150px; /* Alto igual al ancho para círculo perfecto */
+    border-radius: 50%; /* Convierte la imagen en circular */
+    object-fit: cover; /* Evita deformaciones */
+    margin-bottom: 12px; /* Espacio inferior */
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Borde suave premium */
+}
+
+/* Nombre */
+.barber-card h3 {
+    color: #ffc507;
+    margin-bottom: 6px;
+}
+
+/* Texto descriptivo del barbero */
+.barber-card p {
+    color: #ffffff; /* Texto oscuro para contraste */
+    font-size: 14px; /* Tamaño legible */
+}
+
+
+/* Hover */
+.barber-card:hover {
+    transform: translateY(-8px) scale(1.03); /* Efecto premium */
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* Estado ACTIVO cuando el usuario selecciona un barbero */
+.barber-card.active {
+    border-color: #c9a24d; /* Dorado premium */
+    box-shadow: 0 0 18px rgba(201,162,77,0.9); /* Glow dorado */
+}
+
+/* ================= MÓVIL ================= */
+@media (max-width: 768px) {
+
+
+    .barber-container {
+        justify-content: flex-start; /* 🔑 CLAVE */
+        overflow-x: auto; /* Scroll */
+        scroll-snap-type: x mandatory;
+        padding: 0 16px; /* Evita corte */
+    }
+
+    .barber-card {
+        min-width: 200px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    /* Oculta scrollbar */
+    .barber-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+.calendar-hours {
+    margin-top: 24px;
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 👈 2 columnas */
+    gap: 12px;
+}
+
+.hour-btn {
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}

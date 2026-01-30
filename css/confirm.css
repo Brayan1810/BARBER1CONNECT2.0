@@ -1,0 +1,223 @@
+/* ================= RESET GLOBAL ================= */
+
+/* Elimina márgenes y paddings por defecto en todos los elementos del hero confirm */
+* {
+    margin: 0; /* Elimina márgenes externos para evitar espacios inesperados */
+    padding: 0; /* Elimina rellenos internos por defecto */
+    box-sizing: border-box; /* Incluye padding y borde dentro del ancho total */
+    font-family: 'Arial', sans-serif; /* Define la tipografía base del sistema */
+}
+
+/* ================= HERO CONFIRMACIÓN ================= */
+
+/* Estilos principales del hero de confirmación */
+.confirm-hero {
+    min-height: 100vh; /* Ocupa toda la altura visible de la pantalla */
+    background-color: #0b0b0b; /* Fondo negro elegante acorde a la marca */
+    display: flex; /* Activa flexbox para centrar contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding: 40px 20px; /* Espacio interno para móviles y escritorio */
+}
+
+/* Contenedor central del hero */
+.confirm-container {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 520px; /* Limita el ancho para una lectura cómoda */
+    background-color: #111111; /* Fondo ligeramente más claro que el hero */
+    border-radius: 12px; /* Bordes redondeados elegantes */
+    padding: 30px; /* Espacio interno del contenedor */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); /* Sombra suave para profundidad */
+}
+
+/* ================= TÍTULOS ================= */
+
+/* Título principal del hero */
+.confirm-title {
+    color: #ffffff; /* Texto blanco para contraste */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 25px; /* Separación inferior del contenido */
+    font-size: 26px; /* Tamaño de letra destacado */
+}
+
+/* ================= RESUMEN DE LA CITA ================= */
+
+/* Contenedor del resumen */
+.confirm-summary {
+    background-color: #0e0e0e; /* Fondo oscuro para diferenciar sección */
+    border: 1px solid #c9a24d; /* Borde dorado elegante */
+    border-radius: 8px; /* Bordes suaves */
+    padding: 20px; /* Espacio interno */
+    margin-bottom: 30px; /* Separación con el formulario */
+}
+
+/* Título del resumen */
+.summary-title {
+    color: #c9a24d; /* Color dorado para destacar la sección */
+    margin-bottom: 15px; /* Espacio inferior */
+    font-size: 18px; /* Tamaño del subtítulo */
+    text-align: center; /* Centra el texto */
+}
+
+/* Cada línea del resumen */
+.summary-item {
+    display: flex; /* Alinea etiqueta y valor en una fila */
+    justify-content: space-between; /* Separa etiqueta y valor */
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 8px; /* Espaciado entre líneas */
+    font-size: 14px; /* Tamaño de letra legible */
+}
+
+/* Etiqueta del resumen (Servicio, Barbero, etc.) */
+.summary-item .label {
+    color: #aaaaaa; /* Color gris para jerarquía visual */
+}
+
+/* ================= FORMULARIO ================= */
+
+/* Contenedor general del formulario */
+.confirm-form {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Alinea campos en columna */
+}
+
+/* Título del formulario */
+.form-title {
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 20px; /* Separación inferior */
+    font-size: 20px; /* Tamaño del título */
+    text-align: center; /* Centra el texto */
+}
+
+/* Grupo de cada campo */
+.form-group {
+    margin-bottom: 15px; /* Espaciado entre campos */
+}
+
+/* Etiquetas del formulario */
+.form-group label {
+    color: #cccccc; /* Color gris claro */
+    font-size: 13px; /* Tamaño de letra pequeño */
+    margin-bottom: 5px; /* Separación con el input */
+    display: block; /* Ocupa toda la línea */
+}
+
+/* Inputs y textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 12px; /* Espacio interno */
+    border-radius: 6px; /* Bordes redondeados */
+    border: none; /* Sin borde por defecto */
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    font-size: 14px; /* Tamaño de letra */
+}
+
+/* Placeholder de inputs */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777777; /* Color gris para texto guía */
+}
+
+/* ================= LOGIN OPCIONAL ================= */
+
+/* Contenedor del login social */
+.optional-login {
+    text-align: center; /* Centra el contenido */
+    margin: 25px 0; /* Separación vertical */
+}
+
+/* Texto informativo */
+.optional-text {
+    color: #aaaaaa; /* Texto gris */
+    margin-bottom: 10px; /* Separación inferior */
+    font-size: 13px; /* Tamaño pequeño */
+}
+
+/* Botones sociales */
+.btn-social {
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 12px; /* Espacio interno */
+    margin-bottom: 10px; /* Separación entre botones */
+    border-radius: 6px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor tipo botón */
+    font-size: 14px; /* Tamaño de letra */
+}
+
+/* Botón Google */
+.btn-social.google {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+}
+
+/* Botón Facebook */
+.btn-social.facebook {
+    background-color: #1877f2; /* Azul Facebook */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* ================= BOTÓN CONFIRMAR ================= */
+
+/* Botón principal de confirmación */
+.btn-confirm {
+    background-color: #c9a24d; /* Fondo dorado */
+    color: #000000; /* Texto negro */
+    padding: 14px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes suaves */
+    font-size: 16px; /* Tamaño de letra */
+    font-weight: bold; /* Texto destacado */
+    cursor: pointer; /* Cursor de acción */
+}
+
+/* Efecto hover del botón */
+.btn-confirm:hover {
+    background-color: #e0b95b; /* Dorado más claro al pasar el mouse */
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+    .confirm-container {
+        padding: 40px; /* Más espacio interno en desktop */
+    }
+}
+.btn-back {
+    background-color: transparent;
+    color: #c9a24d;
+    border: 1px solid #c9a24d;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.social-login {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-google,
+.btn-facebook {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-google {
+    background: #ffffff;
+    color: #000;
+}
+
+.btn-facebook {
+    background: #1877f2;
+    color: #fff;
+}

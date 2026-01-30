@@ -1,0 +1,359 @@
+/* ========================================================= */
+/* 🔄 RESET GLOBAL */
+/* Aplica a todo el proyecto schedule.html */
+/* ========================================================= */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina rellenos por defecto */
+    box-sizing: border-box; /* Control correcto del tamaño */
+    font-family: 'Poppins', sans-serif; /* Fuente global */
+}
+
+/* ========================================================= */
+/* 🌌 BODY */
+/* Fondo general del schedule */
+/* ========================================================= */
+body {
+    background-image: url("../img/55555.jpg"); /* Imagen de fondo */
+    background-size: cover; /* Cubre toda la pantalla */
+    background-position: center; /* Centra imagen */
+    background-repeat: no-repeat; /* No repite */
+    min-height: 100vh; /* Altura mínima pantalla */
+}
+
+/* ========================================================= */
+/* 🦸 HERO PRINCIPAL */
+/* Contenedor del hero con tarjetas */
+/* ========================================================= */
+.schedule-hero {
+    min-height: 100vh; /* Ocupa toda la altura */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centra vertical (clave) */
+    justify-content: center; /* Centra horizontal */
+    padding-top: 80px; /* Baja el hero respecto al header */
+    padding-bottom: 60px; /* Aire inferior */
+}
+
+/* ========================================================= */
+/* 🌑 OVERLAY OSCURO */
+/* Oscurece el fondo para legibilidad */
+/* ========================================================= */
+
+/* ========================================================= */
+/* 🧊 CAJA HERO */
+/* Cuadro translúcido tipo premium */
+/* ========================================================= */
+.schedule-box {
+    width: fit-content; /* 🔑 Se ajusta al contenido */
+    max-width: 100%; /* Seguridad */
+    background: rgba(15, 15, 15, 0.85); /* Oscuro elegante */
+    border-radius: 20px; /* Bordes suaves */
+    padding: 30px; /* Aire interno */
+}
+
+/* ========================================================= */
+/* 🏆 TÍTULO HERO */
+/* ========================================================= */
+.schedule-title {
+    text-align: center; /* Centra texto */
+    color: #ffffff; /* Dorado premium */
+    font-size: 1.7rem; /* Tamaño grande */
+    margin-bottom: 35px; /* Separación */
+    text-transform: uppercase; /* Estilo fuerte */
+    letter-spacing: 2px; /* Espaciado letras */
+}
+
+/* ========================================================= */
+/* 🃏 CONTENEDOR TARJETAS FIFA */
+/* Grid en PC, slider en móvil */
+/* ========================================================= */
+.fifa-container {
+    display: flex; /* Slider horizontal */
+    gap: 20px; /* Espacio entre tarjetas */
+    overflow-x: auto; /* Permite scroll */
+    scroll-snap-type: x mandatory; /* Scroll tipo slider */
+    padding-bottom: 10px; /* Evita cortar sombra */
+}
+/* ========================================================= */
+/* 🟨 TARJETA FIFA */
+/* ========================================================= */
+.fifa-card {
+    background: linear-gradient(145deg, #f4d282, #1c1c1c); /* Estilo FIFA */
+    border-radius: 40px; /* Bordes redondeados */
+    padding: 18px; /* Espaciado interno */
+    text-align: center; /* Centra contenido */
+    color:  #ffffff; /* Texto blanco */
+    cursor: pointer; /* Interactivo */
+    transition: all 0.35s ease; /* Animaciones suaves */
+
+    border: 2px solid rgba(255, 255, 255, 0.9); /* BORDE BLANCO */
+    box-shadow: 
+        0 0 12px rgba(255, 255, 255, 0.35), /* Glow blanco */
+        inset 0 0 10px rgba(255, 255, 255, 0.08); /* Brillo interno */
+}
+
+
+/* ========================================================= */
+/* 🖼️ IMAGEN TARJETA */
+/* ========================================================= */
+.fifa-card img {
+    width: 100%; /* La imagen ocupa el ancho de la tarjeta */
+    aspect-ratio: 1 / 1.2; /* Fuerza forma cuadrada (clave para que sea redonda) */
+    object-fit: cover; /* Evita deformación de la imagen */
+    border-radius: 30%; /* 🔵 CONVIERTE LA IMAGEN EN CÍRCULO */
+    margin-bottom: 12px; /* Espacio debajo de la imagen */
+    
+}
+
+
+/* ========================================================= */
+/* ✨ NOMBRE DEL CORTE */
+/* ========================================================= */
+.fifa-card h3 {
+    color: #000000; /* Dorado */
+    margin-bottom: 6px; /* Espacio */
+    font-size: 1.2rem; /* Tamaño */
+}
+
+/* ========================================================= */
+/* 📝 DESCRIPCIÓN */
+/* ========================================================= */
+.fifa-card {
+    min-width: 220px; /* Tamaño controlado PC */
+    max-width: 220px; /* Evita gigantismo */
+    scroll-snap-align: center; /* Centra al deslizar */
+    border: 1px solid white; /* BORDE BLANCO */
+    box-shadow: 0 0 12px rgba(255,255,255,0.35); /* SOMBRA BLANCA */
+}
+
+/* ========================================================= */
+/* 🚀 HOVER TARJETA */
+/* ========================================================= */
+/* Hover elegante */
+.fifa-card:hover {
+    transform: translateY(-8px) scale(1.03); /* Efecto premium */
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* ========================================================= */
+/* 📱 MODO MÓVIL */
+/* Slider horizontal tipo app */
+/* ========================================================= */
+/* ================= CORRECCIÓN MOBILE HERO ================= */
+@media (max-width: 768px) {
+
+    /* Hero deja de ocupar toda la pantalla */
+    .schedule-hero {
+        min-height: auto; /* Elimina altura heredada de PC */
+        padding: 20px 0; /* Espacio vertical reducido */
+        align-items: flex-start; /* Quita centrado vertical */
+    }
+
+    /* Caja oscura solo rodea fichas */
+    .hero-box {
+    width: 92%; /* Más pequeño en móvil */
+    max-width: 420px; /* Tamaño tipo app */
+    margin: 0 auto; /* Centrado real */
+    background: rgba(15,15,15,0.88); /* Oscuro elegante */
+    border-radius: 18px;
+    padding: 18px;
+}
+
+
+    /* Slider vuelve a ser táctil */
+    .fifa-container {
+        overflow-x: auto; /* Scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Swipe iOS */
+        scroll-snap-type: x mandatory; /* Snap al deslizar */
+    }
+
+    /* Tarjetas más pequeñas */
+    .fifa-card {
+        min-width: 200px; /* Tamaño cómodo móvil */
+        max-width: 200px;
+        flex-shrink: 0; /* NO se comprimen */
+    }
+       .schedule-hero {
+        margin-top: 90px; /* Compensa altura real del header móvil */
+    }
+
+    .schedule-hero {
+        min-height: unset; /* Elimina altura tipo hero */
+        height: auto; /* Se adapta al contenido */
+        padding: 20px 0; /* Espacio arriba y abajo */
+        display: block; /* Quita centrado tipo hero */
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+    }
+}
+
+
+/* ================= FIN schedule.css ================= */
+.fifa-container::-webkit-scrollbar {
+    display: none; /* Chrome / Safari */
+}
+/* ========================================================= */
+/* 📱 MOBILE — HERO SE CONVIERTE EN CONTENEDOR */
+/* ========================================================= */
+
+/* HERO BARBEROS OCULTO HASTA ELEGIR SERVICIO */
+#barbers {
+    display: none;
+}
+/* ================= MODAL CONFIRMACIÓN ================= */
+
+/* Fondo oscuro que cubre toda la pantalla */
+/* ================= MODAL CONFIRMACIÓN ================= */
+
+.modal {
+    display: none; /* OCULTA el modal al cargar schedule.html */
+    position: fixed; /* Se posiciona sobre toda la pantalla */
+    top: 0; /* Inicia desde arriba */
+    left: 0; /* Inicia desde la izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro elegante */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    z-index: 9999; /* Se asegura de estar por encima de todo */
+}
+
+
+/* Caja central del modal */
+.modal-content {
+    background: #0f0f0f; /* Fondo oscuro premium */
+    border-radius: 16px; /* Bordes suaves */
+    padding: 24px; /* Espacio interno */
+    width: 92%; /* Ajuste móvil */
+    max-width: 420px; /* Límite en desktop */
+    text-align: center; /* Centra texto */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25); /* Glow dorado */
+
+    max-height: 85vh; /* 🔑 Evita que se salga de la pantalla */
+    overflow-y: auto; /* 🔑 Permite scroll interno en móvil */
+}
+
+
+
+/* Botón cerrar (X) */
+.close-modal {
+    font-size: 26px; /* Tamaño del ícono */
+    cursor: pointer; /* Cursor tipo botón */
+    float: right; /* Posiciona a la derecha */
+}
+
+/* Botón para cambiar la cita */
+.btn-back {
+    margin-top: 12px; /* Espacio superior */
+    background: transparent; /* Fondo transparente */
+    border: 1px solid #c9a24d; /* Borde dorado */
+    color: #c9a24d; /* Texto dorado */
+    padding: 10px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo botón */
+}
+/* ================= MODAL TEXTO ================= */
+
+.modal-content h2,
+.modal-content p,
+.modal-content label,
+.modal-content span {
+    color: #ffffff; /* Texto blanco visible */
+}
+
+/* ================= FORMULARIO ================= */
+
+#confirmForm input,
+#confirmForm textarea {
+    width: 100%; /* Ocupa todo el ancho */
+    background: #1a1a1a; /* Fondo oscuro */
+    border: 1px solid #c9a24d; /* Borde dorado */
+    color: #ffffff; /* Texto blanco */
+    padding: 12px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes suaves */
+    margin-bottom: 12px; /* Espacio entre campos */
+    outline: none; /* Quita borde azul */
+}
+
+/* Placeholder elegante */
+#confirmForm input::placeholder,
+#confirmForm textarea::placeholder {
+    color: #aaaaaa;
+}
+
+/* ================= BOTÓN CONFIRMAR ================= */
+
+.btn-confirm {
+    background: linear-gradient(135deg, #d4af37, #b8962e); /* Dorado premium */
+    color: #000;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Hover elegante */
+.btn-confirm:hover {
+    filter: brightness(1.1);
+}
+/* ================= TEXTO MODAL CONFIRMACIÓN ================= */
+
+.modal-content h2 {
+    color: #c9a24d; /* Dorado premium */
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+}
+
+.modal-content p,
+.modal-content span {
+    color: #ffffff; /* Texto blanco legible */
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Botón principal confirmar */
+.btn-confirm {
+    margin-top: 18px;
+    background: linear-gradient(135deg, #c9a24d, #f4d282);
+    border: none;
+    color: #000;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Botón cambiar cita (secundario) */
+.btn-back {
+    width: 100%;
+    margin-top: 12px;
+}
+@media (max-height: 700px) {
+    .confirm-modal {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+}
+/* ================= FIX DEFINITIVO BOTONES SOCIALES ================= */
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-buttons button {
+    width: fit-content !important;   /* 🔥 rompe cualquier 100% */
+    min-width: 200px;
+    max-width: 240px;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+}

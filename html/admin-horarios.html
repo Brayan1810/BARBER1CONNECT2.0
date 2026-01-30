@@ -1,0 +1,99 @@
+<!-- ========================================================= -->
+<!-- 🔐 PANEL ADMIN — HORARIOS BARBEROS -->
+<!-- Archivo: html/admin-horarios.html -->
+<!-- Proyecto: BARBER1CONNECT2.0 -->
+<!-- ========================================================= -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"> <!-- Define codificación de caracteres -->
+    <title>Admin Horarios | Barber1Connect</title> <!-- Título de la pestaña -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+
+    <!-- ================= ESTILOS ================= -->
+
+    <link rel="stylesheet" href="../css/header.css"> <!-- Estilos del header -->
+    <link rel="stylesheet" href="../css/footer.css"> <!-- Estilos del footer -->
+    <link rel="stylesheet" href="../css/admin-horarios.css"> <!-- Estilos del panel -->
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <div id="header-container"></div> <!-- Aquí se carga header.html -->
+    <!-- ================= HEADER ================= -->
+
+    <div id="header-container"></div> <!-- Aquí se carga header.html -->
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+
+    <main class="admin-container">
+
+        <h1> Configuración de Horarios</h1> <!-- Título principal -->
+
+        <!-- ================= SELECT BARBERO ================= -->
+
+        <div class="admin-block">
+            <label>Seleccionar barbero</label> <!-- Etiqueta -->
+            <select id="barberoSelect">
+                <option value="">-- Selecciona --</option>
+                <option value="brayan">Brayan</option>
+                <option value="oscar">Oscar</option>
+            </select>
+        </div>
+
+        <!-- ================= SELECCIÓN DE DÍAS ================= -->
+
+        <div class="admin-block" id="diasSeleccion">
+            <h3>Selecciona los días a modificar</h3>
+            <!-- Aquí JS inserta lunes a domingo -->
+        </div>
+
+        <!-- ================= FORMULARIO HORARIOS ================= -->
+
+        <div class="admin-block hidden" id="formHorarios">
+
+            <h3>Configurar horarios</h3>
+
+            <label>Hora inicio</label>
+            <input type="time" id="inicio">
+
+            <label>Hora fin</label>
+            <input type="time" id="fin">
+
+            <label>Duración del bloque (min)</label>
+            <select id="bloque">
+                <option value="30">30</option>
+                <option value="60">60</option>
+            </select>
+
+            <label>Almuerzo inicio</label>
+            <input type="time" id="almuerzoInicio">
+
+            <label>Almuerzo fin</label>
+            <input type="time" id="almuerzoFin">
+
+            <button id="guardarHorarios">💾 Guardar horarios</button> <!-- Guardar -->
+
+            <p id="adminStatus"></p> <!-- Mensaje de estado -->
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <div id="footer-container"></div> <!-- Aquí se carga footer.html -->
+
+    <!-- ================= JS ================= -->
+
+    <script src="../js/loadLayout.js"></script> <!-- Carga header/footer -->
+    <script type="module" src="../js/admin-horarios.js"></script> <!-- Lógica -->
+    
+        <!-- ================= FOOTER ================= -->
+    <div id="footer-container"></div>
+
+</body>
+</html>

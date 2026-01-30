@@ -1,0 +1,210 @@
+/* ========================================================= */
+/* 📅 SECCIÓN CALENDARIO — BARBER1CONNECT2.0 */
+/* Archivo: css/calendar.css */
+/* Controla DISEÑO del calendario visual */
+/* ========================================================= */
+
+/* ---------- HERO CALENDARIO ---------- */
+.calendar-hero {
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    display: flex; /* Permite centrar contenido */
+    justify-content: center; /* Centrado horizontal */
+    padding: 60px 0; /* Espacio vertical superior e inferior */
+}
+
+/* ---------- CAJA PRINCIPAL ---------- */
+.calendar-box {
+    width: 100%; /* Evita desbordes horizontales */
+    max-width: 420px; /* Tamaño tipo app móvil */
+    background: rgba(15,15,15,0.88); /* Fondo oscuro elegante */
+    border-radius: 20px; /* Bordes suaves */
+    padding: 20px; /* Espacio interno */
+    overflow: hidden; /* 🔑 Evita que los días se salgan */
+}
+
+/* ---------- TÍTULO ---------- */
+.calendar-title {
+    text-align: center; /* Centra texto */
+    color: #c9a24d; /* Dorado premium */
+    font-size: 1.6rem; /* Tamaño consistente */
+    margin-bottom: 20px; /* Separación inferior */
+    letter-spacing: 2px; /* Estilo profesional */
+}
+
+/* ---------- CONTROLES MES ---------- */
+.calendar-controls {
+    display: flex; /* Elementos en fila */
+    justify-content: space-between; /* Flechas a los lados */
+    align-items: center; /* Alineación vertical */
+    margin-bottom: 16px; /* Separación */
+}
+
+/* ---------- BOTONES ---------- */
+.calendar-arrow {
+    background: transparent; /* Sin fondo */
+    border: 2px solid #c9a24d; /* Borde dorado */
+    color: #c9a24d; /* Texto dorado */
+    font-size: 1.4rem; /* Tamaño icono */
+    padding: 4px 12px; /* Área clic */
+    border-radius: 10px; /* Bordes suaves */
+    cursor: pointer; /* Cursor interactivo */
+}
+
+/* ---------- TEXTO MES ---------- */
+.calendar-month {
+    color: #ffffff; /* Texto blanco */
+    font-size: 1rem; /* Tamaño legible */
+}
+
+/* ---------- CONTENEDOR SCROLL ---------- */
+.calendar-scroll {
+    overflow-x: auto; /* 🔑 Permite arrastrar días */
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Oculta scrollbar */
+.calendar-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---------- CONTENEDOR DÍAS ---------- */
+.calendar-days {
+    display: flex; /* Días en fila */
+    gap: 14px; /* Espacio entre días */
+    padding: 10px 0; /* Aire vertical */
+}
+
+/* ---------- TARJETA DÍA ---------- */
+.calendar-day {
+    min-width: 70px; /* 🔑 Tamaño mínimo para swipe */
+    background: #111; /* Fondo oscuro */
+    border: 2px solid rgba(255,255,255,0.7); /* Borde claro */
+    border-radius: 14px; /* Bordes suaves */
+    padding: 12px 8px; /* Espacio interno */
+    text-align: center; /* Texto centrado */
+    cursor: pointer; /* Interacción */
+    flex-shrink: 0; /* 🔑 Evita que se compriman */
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+/* ---------- DÍA ACTIVO ---------- */
+.calendar-day.active {
+    border-color: #c9a24d; /* Dorado */
+    box-shadow: 0 0 12px rgba(201,162,77,0.8); /* Glow */
+}
+
+/* ---------- TEXTO DÍA ---------- */
+.calendar-day span {
+    display: block; /* Texto en columna */
+    color: #ffffff; /* Texto blanco */
+    font-size: 0.9rem; /* Tamaño legible */
+}
+
+/* ========================================================= */
+/* 📱 CONFIGURACIÓN MÓVIL */
+/* ========================================================= */
+@media (max-width: 768px) {
+
+    .calendar-box {
+        max-width: 95%; /* Se adapta a móviles pequeños */
+        padding: 16px; /* Reduce padding */
+    }
+
+    .calendar-day {
+        min-width: 64px; /* Días más compactos */
+        padding: 10px 6px; /* Ajuste táctil */
+    }
+
+    .calendar-title {
+        font-size: 1.4rem; /* Título más pequeño */
+    }
+}
+/* ========================================================= */
+/* 🖱️ FLECHAS LATERALES DÍAS — SOLO DESKTOP */
+/* ========================================================= */
+
+/* Wrapper general */
+.calendar-days-wrapper {
+    display: flex; /* Alinea flechas y días en fila */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre elementos */
+}
+
+/* Botones laterales */
+.calendar-day-arrow {
+    background: transparent; /* Sin fondo */
+    border: 2px solid #c9a24d; /* Borde dorado */
+    color: #c9a24d; /* Texto dorado */
+    font-size: 1.6rem; /* Tamaño flecha */
+    padding: 6px 12px; /* Área clic */
+    border-radius: 10px; /* Bordes suaves */
+    cursor: pointer; /* Interactivo */
+    height: fit-content; /* Ajusta altura */
+    transition: background 0.3s ease;
+}
+
+/* Hover elegante */
+.calendar-day-arrow:hover {
+    background: rgba(201,162,77,0.15);
+}
+
+/* ========================================================= */
+/* 📱 MÓVIL — OCULTA FLECHAS */
+/* ========================================================= */
+@media (max-width: 768px) {
+
+    .calendar-day-arrow {
+        display: none; /* 🔑 En móvil NO se muestran */
+    }
+
+    .calendar-days-wrapper {
+        gap: 0; /* Ajuste limpio */
+    }
+}
+/* Día de la semana (Lun, Mar, etc.) */
+.day-week {
+    font-size: 0.75rem;
+    color: #fffafa;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+/* Día + mes */
+.day-number {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+/* ================= HORAS DISPONIBLES ================= */
+
+#hours-container {
+    display: grid;                 /* Organiza las horas en grilla */
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;                      /* Espacio entre botones */
+    margin-top: 20px;
+}
+
+/* Botones de hora */
+.hour-btn {
+    padding: 12px;
+    background-color: #111;         /* Negro elegante */
+    color: #ffffff;                 /* Dorado */
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.hour-btn:hover {
+    background-color: #ffffff;
+    color: #111;
+    border: 1px solid #ffc504;
+    box-shadow: 0 0 12px rgba(201,162,77,0.8); /* Glow */
+}
+
+/* Mensaje sin horarios */
+.no-hours-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}

@@ -1,0 +1,641 @@
+   
+IMPORTATE: 
+cuando ya estes con un poco de rtipopo por favor hacer que en la parte del calendario no de la onbion de poner dias anteriores es decir si ya es 5 de enero que ya no se puesa escojer 4 o 3 d enero o ninguno anterior ya que no tiene sentido que se pueda escoger un dia anterior al actual
+
+/BARBER1CONNECT2.0   
+    /html
+    ├── schedule.html
+    ├── header.html
+    ├── index.html
+    ├── barbers.html
+    ├── calendar.html
+    └── footer.html
+
+    /css
+    ├── schedule.css
+    ├── calendar.css
+    ├── header.css
+    ├── index.css
+    ├── barbers.css
+    └── footer.css
+
+    /js
+    ├── schedule.js
+    ├── calendar.js
+    ├── header.js
+    ├── index.js
+    ├── barbers.js
+    ├── admin-horarios.js
+    ├── firebase.js
+    ├── firebase.test.js
+    ├── calendar.Firebase.js
+    └── footer.js
+
+ 
+estructura del proyecto "Barber1Connect 2.0" firebase
+
+proyecto: Barber1Connect2 
+
+    barberias
+    └── barberia_demo
+        ├── barbero
+        │   ├── (documento):brayan
+        │   │      ├── activo (boolean): true
+        │   │      ├── nombre (string): "brayan"
+        │   │      └──  rol (string): "barbero"
+        │   │.      
+        │   ├── (documento):oscar
+        │   │      ├── activo (boolean): true
+        │   │      ├── nombre (string): "oscar"
+        │   │      └── rol (string): "barbero"
+        │
+        │
+        ├── servicios
+        │   ├── (documento):corte_clasico
+        │   │      ├── activo (boolean): true
+        │   │      ├── nombre (string): "Corte Clásico"
+        │   │      ├── duracion (number): 30
+        │   │      └── precio (number): 13000
+        │   │      
+        │   │ 
+        │       
+        │
+        │
+        ├── horarios
+        │   ├── (documento):brayan
+        │   │      ├──(campo): "lunes"
+        │   │      │     ├── activo (boolean): true
+        │   │      │     ├── almuerzoInicio (string): "13:00"
+        │   │      │     ├── almuerzoFin (string): "14:00"
+        │   │      │     ├── inicio (string): "09:00"
+        │   │      │     ├── fin (string): "17:00"
+        │   │      │     └── bloque (number): 60
+        │   │      │
+        │   │      ├── (campo): "martes"
+        │   │      ├── (campo): "miercoles"
+        │   │      ├── (campo): "jueves"
+        │   │      ├── (campo): "viernes"
+        │   │      ├── (campo): "sabado"
+        │   │      └── (campo): "domingo"
+        │   │
+        │   ├── (documento):oscar
+        │   │      ├──(campo): "lunes"
+        │   │      │     ├── activo (boolean): true
+        │   │      │     ├── almuerzoInicio (string): "13:00"
+        │   │      │     ├── almuerzoFin (string): "14:00"
+        │   │      │     ├── inicio (string): "09:00"
+        │   │      │     ├── fin (string): "17:00"
+        │   │      │     ├── bloque (number): 60
+        │   │      │
+        │   │      ├── (campo): "martes"
+        │   │      ├── (campo): "miercoles"
+        │   │      ├── (campo): "jueves"
+        │   │      ├── (campo): "viernes"
+        │   │      ├── (campo): "sabado"
+        │   │      └── (campo): "domingo"
+        │
+        │
+        ├── citas
+        └── usuarios
+             ├── {uid}
+             │     ├── nombre
+             │     ├── telefono
+             │     ├── email
+             │     ├── provider
+             │     ├── rol: "cliente"
+             │     ├── activo: true
+             │     └── creadoEn
+
+ flujo de agendar cita en schedule.html/js     
+
+ 1. Usuario entra a schedule.html
+2. Elige servicio
+3. Elige barbero
+4. Elige fecha
+5. Ve horas disponibles
+6. 👆 CLICK en una hora
+   ↓
+7. Validación:
+   - ¿Está logueado?
+       - NO → mostrar modal "Completa tus datos"
+       - SÍ → mostrar resumen de la cita
+       
+
+
+bo.online-web
+bo.online-admin
+bo.online-mobile
+bo.online-api
+
+🟢 PASO 1 — CREACIÓN Y CONFIGURACIÓN DE FIREBASE
+
+(Base del sistema)
+
+📌 Objetivo:
+
+Tener Firebase listo y conectado al proyecto
+
+🔧 Qué se hace:
+
+Crear proyecto en Firebase
+
+Activar:
+
+Firestore
+
+Authentication
+
+Configurar:
+
+Google
+
+Email/Password
+
+📁 Archivos:
+
+/js/firebase.js
+(Configuración ÚNICA del proyecto)
+
+✔️ Nada visual todavía
+✔️ Solo infraestructura
+
+🟢 PASO 2 — ESTRUCTURA BASE DE LA BASE DE DATOS
+
+(Diseño sin lógica aún)
+
+📌 Objetivo:
+
+Crear estructura limpia y escalable
+
+🔧 Qué se hace:
+
+Crear en Firestore:
+
+barberias
+
+servicios
+
+barberos
+
+horarios
+
+Insertar datos de prueba
+
+📁 No se crea HTML
+📁 Solo Firestore
+
+✔️ Arquitectura SaaS
+✔️ Pensado para vender
+
+🟢 PASO 3 — LECTURA DE HORARIOS (SIN LOGIN)
+
+(Agendamiento real empieza)
+
+📌 Objetivo:
+
+Mostrar horarios disponibles reales
+
+🔧 Qué se hace:
+
+Conectar:
+
+calendar.js
+
+schedule.js
+
+Leer:
+
+Horarios base
+
+Citas ocupadas
+
+Mostrar horas dinámicas
+
+📁 Archivos:
+
+calendar.js
+
+schedule.js
+
+✔️ Sin autenticación aún
+✔️ Sistema funcional
+
+🟢 PASO 4 — PÁGINA DE LOGIN INDEPENDIENTE
+
+(SIN CONECTAR TODAVÍA)
+
+📌 Objetivo:
+
+Tener sistema de login limpio y separado
+
+🔧 Qué se hace:
+
+Crear:
+
+login.html
+
+login.css
+
+login.js
+
+Login con:
+
+Google
+
+Email
+
+📁 Archivos nuevos y pequeños
+📁 Nada se mezcla
+
+✔️ Orden total
+✔️ Fácil mantenimiento
+
+🟢 PASO 5 — REGISTRO Y CONTROL DE USUARIOS
+
+(Datos + roles)
+
+📌 Objetivo:
+
+Guardar usuarios en Firestore
+
+🔧 Qué se hace:
+
+Crear colección usuarios
+
+Guardar:
+
+nombre
+
+apellido
+
+teléfono
+
+rol
+
+Asociar con UID
+
+📁 Archivos:
+
+auth.js
+
+login.js
+
+✔️ Base para permisos
+✔️ Historial de clientes
+
+🟢 PASO 6 — CONEXIÓN LOGIN ↔ AGENDAMIENTO
+
+(Flujo real del sistema)
+
+📌 Objetivo:
+
+Obligar login SOLO al confirmar cita
+
+🔧 Qué se hace:
+
+Si NO está logueado:
+
+Redirigir a login
+
+Al volver:
+
+Mantener selección
+
+Confirmar cita
+
+📁 Archivos:
+
+schedule.js
+
+auth.js
+
+✔️ UX profesional
+✔️ Nada forzado
+
+🟢 PASO 7 — ROLES Y PROTECCIÓN DE VISTAS
+
+(Sistema serio)
+
+📌 Objetivo:
+
+Mostrar contenido según rol
+
+🔧 Qué se hace:
+
+Crear roles.js
+
+Restringir:
+
+Admin
+
+Barbero
+
+Cliente
+
+📁 Archivos:
+
+roles.js
+
+header.js
+
+✔️ Seguridad
+✔️ Escalabilidad
+
+🟢 PASO 8 — CIERRE Y PREPARACIÓN PARA VENTA
+
+(Producto digital)
+
+📌 Objetivo:
+
+Dejar sistema listo para comercializar
+
+🔧 Qué se hace:
+
+Variables por barbería
+
+Documentación
+
+Limpieza final
+
+Estructura replicable
+
+✔️ Proyecto académico
+✔️ Emprendimiento
+✔️ SaaS real
+
+
+
+
+
+
+FIREBASE
+
+🟢 PASO 2 — CREAR LA ESTRUCTURA EN FIRESTORE (EN ESPAÑOL)
+🎯 OBJETIVO
+
+Que tu Firestore quede así:
+
+barberias
+ └── barberia_demo
+     ├── barberos
+     ├── servicios
+     ├── horarios
+     ├── citas
+     └── usuarios
+
+🧭 PASO 2.1 — ENTRAR A FIRESTORE
+
+1️⃣ Entra a Firebase Console
+2️⃣ Abre tu proyecto barber1connect2
+3️⃣ En el menú izquierdo haz clic en:
+
+👉 Compilación
+👉 Base de datos de Firestore
+
+Si ya está activo, verás un botón que dice:
+
+👉 Iniciar colección
+
+🧭 PASO 2.2 — CREAR LA COLECCIÓN PRINCIPAL
+
+1️⃣ Haz clic en Iniciar colección
+
+Se abre una ventana.
+
+✍️ Llena así:
+
+ID de la colección
+
+barberias
+
+
+2️⃣ Haz clic en Siguiente
+
+🧭 PASO 2.3 — CREAR EL DOCUMENTO DE LA BARBERÍA
+
+Ahora Firebase te pide un documento.
+
+✍️ Llena así:
+
+ID del documento
+
+barberia_demo
+
+⬇️ Ahora agrega los campos (uno por uno)
+
+Debajo verás algo que dice Agregar campo.
+
+Agrega:
+
+Campo 1
+
+Nombre del campo: nombre
+
+Tipo: string
+
+Valor: Barbería Demo
+
+Campo 2
+
+Nombre del campo: activa
+
+Tipo: boolean
+
+Valor: true
+
+Campo 3
+
+Nombre del campo: fechaCreacion
+
+Tipo: string
+
+Valor: 2026-01-12
+
+3️⃣ Cuando termines, haz clic en Guardar
+
+✅ Ya tienes la barbería creada.
+
+🧭 PASO 2.4 — CREAR SUBCOLECCIÓN BARBEROS
+
+1️⃣ Haz clic sobre barberia_demo
+2️⃣ A la derecha, haz clic en:
+
+👉 Iniciar colección
+
+✍️ Llena así:
+
+ID de la colección
+
+barberos
+
+
+Haz clic en Siguiente
+
+➕ Documento 1 — Brayan
+
+ID del documento
+
+brayan
+
+
+Agrega campos:
+
+nombre → string → Brayan
+
+rol → string → barbero
+
+activo → boolean → true
+
+Haz clic en Guardar
+
+➕ Documento 2 — Oscar
+
+Repite:
+
+ID del documento
+
+oscar
+
+
+Campos:
+
+nombre → string → Oscar
+
+rol → string → barbero
+
+activo → boolean → true
+
+Guardar
+
+🧭 PASO 2.5 — CREAR SUBCOLECCIÓN SERVICIOS
+
+1️⃣ Vuelve a barberia_demo
+2️⃣ Haz clic en Iniciar colección
+
+✍️ Llena así:
+
+ID de la colección
+
+servicios
+
+➕ Documento — Corte Clásico
+
+ID del documento
+
+corte_clasico
+
+
+Campos:
+
+nombre → string → Corte Clásico
+
+duracion → number → 30
+
+precio → number → 13000
+
+activo → boolean → true
+
+Guardar
+
+🧭 PASO 2.6 — CREAR SUBCOLECCIÓN HORARIOS
+
+1️⃣ Dentro de barberia_demo
+2️⃣ Iniciar colección
+
+✍️ Llena así:
+
+ID de la colección
+
+horarios
+
+➕ Documento ejemplo
+
+ID del documento
+
+brayan_lunes
+
+
+Campos:
+
+barberoId → string → brayan
+
+diaSemana → string → lunes
+
+inicio → string → 09:00
+
+fin → string → 18:00
+
+bloque → number → 30
+
+Guardar
+
+🧭 PASO 2.7 — CREAR SUBCOLECCIÓN CITAS (VACÍA)
+
+1️⃣ En barberia_demo
+2️⃣ Iniciar colección
+
+ID de la colección
+
+citas
+
+
+👉 No agregues campos
+👉 Solo créala
+
+🧭 PASO 2.8 — CREAR SUBCOLECCIÓN USUARIOS (VACÍA)
+
+1️⃣ En barberia_demo
+2️⃣ Iniciar colección
+
+ID de la colección
+
+usuarios
+
+
+👉 Tampoco agregues documentos
+
+🧠 SI ALGO NO TE CUADRA, REVISA ESTO
+
+Debes ver en pantalla:
+
+barberias
+ └── barberia_demo
+     ├── barberos
+     ├── servicios
+     ├── horarios
+     ├── citas
+     └── usuarios
+
+                     // 🔥 MEJORA DE UX: Selección automática y centrado del día actual
+                setTimeout(() => { 
+                    console.log("Auto-seleccionando y centrando día actual..."); // INFORMA la acción en la consola.
+                    
+                    dayCard.click(); // DISPARA el evento click para cargar las horas de Firebase inmediatamente.
+
+                    // 🎯 CENTRADO DEL SLIDER:
+                    dayCard.scrollIntoView({ 
+                        behavior: "smooth", // HACE que el movimiento sea suave y no un salto brusco.
+                        inline: "center",   // CENTRA el día horizontalmente dentro del contenedor de scroll.
+                        block: "nearest"    // EVITA que la página entera se mueva hacia arriba o abajo innecesariamente.
+                    });
+                }, 200); // AUMENTAMOS a 200ms para dar tiempo a que el slider se renderice completamente.
+
+    🚀 PLAN DE IMPLEMENTACIÓN (ORDEN CORRECTO)
+
+    No vamos a hacer todo de golpe.
+    Este es el orden PROFESIONAL:
+
+    🔥 FASE 1 (AHORA)
+
+    1️⃣ Autenticación (Google / Facebook / Manual)
+    2️⃣ Guardar usuario en Firebase con rol cliente
+
+    🔥 FASE 2
+
+    3️⃣ Bloquear horas ocupadas leyendo citas
+    4️⃣ Guardar cita en Firebase
+
+    🔥 FASE 3
+
+    5️⃣ Popup de felicitación + sellos
+    6️⃣ Admin cancela / completa citas

@@ -1,0 +1,68 @@
+<!-- ========================================================= -->
+<!-- 📅 CALENDARIO — BARBER1CONNECT2.0 -->
+<!-- Archivo: html/calendar.html -->
+<!-- Renderiza estructura visual del calendario -->
+<!-- ========================================================= -->
+
+<section class="calendar-hero">
+    
+    <!-- Caja principal del calendario -->
+    <div class="calendar-box">
+
+        <!-- Título -->
+        <h2 class="calendar-title">
+            Selecciona la fecha
+        </h2>
+
+        <!-- Controles de mes -->
+        <div class="calendar-controls">
+
+            <!-- Botón mes anterior -->
+            <button class="calendar-arrow" id="prevMonth">
+                ‹
+            </button>
+
+            <!-- Texto mes/año dinámico -->
+            <span class="calendar-month" id="currentMonth"></span>
+
+            <!-- Botón mes siguiente -->
+            <button class="calendar-arrow" id="nextMonth">
+                ›
+            </button>
+
+        </div>
+                <!-- CONTENEDOR SLIDER + FLECHAS (SOLO DESKTOP) -->
+        <div class="calendar-days-wrapper">
+
+            <!-- Flecha izquierda días -->
+            <button class="calendar-day-arrow left" id="dayPrev">
+                ‹
+            </button>
+
+            <!-- Contenedor scroll de días -->
+            <div class="calendar-scroll">
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+
+            <!-- Flecha derecha días -->
+            <button class="calendar-day-arrow right" id="dayNext">
+                ›
+            </button>
+
+    </div>
+        <!-- ================= HORARIOS DISPONIBLES ================= -->
+    <div class="calendar-hours" id="calendarHours" style="display:none;">
+
+       
+        <!-- Grid donde JS insertará las horas -->
+        <div class="hours-grid" id="hoursGrid"></div>
+
+    </div>
+
+
+
+
+</section>
+<script type="module" src="../js/calendar.js"></script>
+<script type="module" src="../js/calendar.firebase.js"></script>
+

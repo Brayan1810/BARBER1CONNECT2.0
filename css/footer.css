@@ -1,0 +1,84 @@
+/* ================= FOOTER UNIVERSAL ================= */
+
+.footer {
+    background-color: #000000; /* Fondo negro elegante */
+    border-top: 1px solid rgba(212,175,55,0.3); /* Línea dorada superior */
+    color: #999999; /* Texto blanco */
+    padding: 60px 20px 20px; /* Espaciado general */
+}
+
+/* Contenedor principal */
+.footer-container {
+    display: grid; /* Grid para orden profesional */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 40px; /* Espacio entre bloques */
+    max-width: 1300px; /* Ancho máximo */
+    margin: auto; /* Centrado */
+}
+
+/* Logo */
+.footer-brand img {
+    width: 140px; /* Tamaño del logo */
+    margin-bottom: 15px;
+}
+
+/* Títulos */
+.footer h3 {
+    color: #d4af37; /* Dorado */
+    margin-bottom: 15px;
+}
+
+/* Texto */
+.footer p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Redes */
+.social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #908f8f;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover redes */
+.social-icons a:hover {
+    color: #d4af37;
+    transform: translateY(-3px);
+}
+
+/* Parte inferior */
+
+/* ================= MÓVIL ================= */
+@media (max-width: 768px) {
+
+    .footer-container {
+        grid-template-columns: 1fr; /* Una columna */
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+.footer-bottom  {
+    text-align: center;
+ }
+.footer-bottom a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #fefbfb;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-top: 40px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.footer-bottom a:hover {
+    color: #08e4f8;
+    transform: translateY(-3px);
+}

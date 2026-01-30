@@ -1,0 +1,59 @@
+<!-- ========================================================= -->
+<!-- 🔝 HEADER REUTILIZABLE — BARBER1CONNECT2.0 -->
+<!-- Archivo: html/header.html -->
+<!-- Menú principal de navegación -->
+<!-- ========================================================= -->
+
+<header class="header"> <!-- Contenedor principal del header -->
+
+    <div class="header-container"> <!-- Contenedor interno del layout -->
+
+        <img src="../img/logo.png" class="logo" alt="Logo Barber1Connect">
+        <!-- Logo principal de la aplicación -->
+
+        <div class="menu-toggle">
+            ☰
+        </div>
+        <!-- Botón hamburguesa visible solo en móvil -->
+
+        <nav class="nav"> <!-- Navegación principal -->
+            <ul class="menu"> <!-- Lista del menú -->
+
+                <li class="menu-item">
+                    <a href="index.html">Inicio</a>
+                </li>
+                <!-- Enlace a la página principal -->
+
+                <li class="menu-item">
+                    <a href="schedule.html">Agendar</a>
+                </li>
+                <!-- Enlace al sistema de citas -->
+
+                <li class="menu-item dropdown">
+                    <a href="#">Productos</a>
+                    <!-- Opción con submenú -->
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Hombre</a></li>
+                        <li><a href="#">Mujer</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="tienda.html">Tienda</a>
+                </li>
+                <!-- Enlace a tienda -->
+
+                <!-- ================= ADMIN ================= -->
+
+                <li class="menu-item admin-only">
+                    <a href="admin-horarios.html">Admin Horarios</a>
+                </li>
+                <!-- Enlace SOLO para administradores (futuro rol) -->
+
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
