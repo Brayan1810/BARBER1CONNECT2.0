@@ -265,32 +265,26 @@ function renderHoras(horas) { // DEFINE cómo se muestran los horarios disponibl
 
             sessionStorage.setItem("selectedService", localStorage.getItem("servicio")); 
             // GUARDA el servicio seleccionado previamente.
+            sessionStorage.setItem("horaClickConfirmado", "true");
+        // 🔒 Marca que el usuario SÍ hizo click real en una hora
 
-                /* ================= MOSTRAR MODAL DE CONFIRMACIÓN ================= */
+        // ================= MOSTRAR BOTÓN AGENDAR =================
 
-            const modal = document.getElementById("confirmModal"); 
-            // OBTIENE el contenedor del modal desde schedule.html
+        // Llama a la función de schedule.js que crea y muestra el botón AGENDAR
+        if (typeof mostrarBotonAgendar === "function") {
 
-            document.getElementById("summary-service").textContent = 
-                sessionStorage.getItem("selectedService"); 
-            // INSERTA el servicio elegido en el resumen del modal
+            // Muestra el botón AGENDAR después de seleccionar una hora
+            mostrarBotonAgendar();
 
-            document.getElementById("summary-barber").textContent = 
-                sessionStorage.getItem("selectedBarber"); 
-            // INSERTA el barbero elegido en el resumen del modal
+        } else {
 
-            document.getElementById("summary-time").textContent = 
-                sessionStorage.getItem("selectedTime"); 
-            // INSERTA la hora elegida en el resumen del modal
+            // Muestra un error si schedule.js no cargó correctamente
+            console.error("❌ La función mostrarBotonAgendar() no está disponible");
 
-            document.getElementById("summary-date").textContent = 
-                formatDate(sessionStorage.getItem("selectedDate")); 
-            // INSERTA la fecha limpia (DD/MM/YYYY) en el resumen del modal
+        }
 
-            showConfirmModal();
-            // Abre el modal usando la función que formatea la fecha
 
-            // MUESTRA el modal sin recargar la página
+  
 
         });
 

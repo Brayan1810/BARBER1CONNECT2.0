@@ -357,3 +357,54 @@ body {
     font-size: 14px;
     border-radius: 8px;
 }
+
+/* ================= BOTÓN AGENDAR CITA ================= */
+
+/* Contenedor visual del botón AGENDAR */
+#btnAgendar {
+    display: none; /* Oculto hasta seleccionar una hora */
+    margin: 40px auto 60px auto; /* Centra el botón y agrega espacio */
+    padding: 16px 45px; /* Tamaño interno del botón */
+    background-color: #000000; /* Fondo negro */
+    color: #d4af37; /* Texto dorado */
+    border: 2px solid #d4af37; /* Borde dorado */
+    border-radius: 30px; /* Bordes redondeados */
+    font-family: 'Bebas Neue', sans-serif; /* Fuente urbana */
+    font-size: 22px; /* Tamaño del texto */
+    letter-spacing: 2px; /* Separación entre letras */
+    cursor: pointer; /* Cursor de selección */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Brillo dorado */
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+
+/* Efecto cuando el usuario pasa el mouse */
+#btnAgendar:hover {
+    background-color: #d4af37; /* Cambia el fondo a dorado */
+    color: #000000; /* Cambia el texto a negro */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); /* Aumenta el brillo */
+    transform: translateY(-5px); /* Eleva ligeramente el botón */
+}
+
+
+/* Efecto cuando se presiona el botón */
+#btnAgendar:active {
+    transform: scale(0.95); /* Hace pequeño el botón al presionarlo */
+}
+
+
+/* ================= BOTÓN AGENDAR EN MÓVIL ================= */
+
+@media (max-width: 768px) {
+
+    /* Ajusta el botón para pantallas pequeñas */
+    #btnAgendar {
+        width: 85%; /* Ocupa una parte cómoda de la pantalla */
+        max-width: 350px; /* Evita que sea demasiado ancho */
+        padding: 15px 20px; /* Reduce el espacio interno */
+        margin: 35px auto 50px auto; /* Centra y separa el botón */
+        font-size: 20px; /* Reduce el tamaño del texto */
+    }
+
+}
+

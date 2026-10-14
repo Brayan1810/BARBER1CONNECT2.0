@@ -9,6 +9,8 @@ cuando ya estes con un poco de rtipopo por favor hacer que en la parte del calen
     ├── index.html
     ├── barbers.html
     ├── calendar.html
+    ├── confirm.html
+    ├── admin-horarios.html
     └── footer.html
 
     /css
@@ -17,10 +19,13 @@ cuando ya estes con un poco de rtipopo por favor hacer que en la parte del calen
     ├── header.css
     ├── index.css
     ├── barbers.css
+    ├── confirm.css
+    ├── admin-horarios.css
     └── footer.css
 
     /js
     ├── schedule.js
+    ├──appointments.firebase.js
     ├── calendar.js
     ├── header.js
     ├── index.js
@@ -28,9 +33,13 @@ cuando ya estes con un poco de rtipopo por favor hacer que en la parte del calen
     ├── admin-horarios.js
     ├── firebase.js
     ├── firebase.test.js
-    ├── calendar.Firebase.js
+    ├── calendar.firebase.js
+    ├── confirm.js
+    ├── auth-google.js
+    ├──  appointments.utils.js
     └── footer.js
 
+   /img
  
 estructura del proyecto "Barber1Connect 2.0" firebase
 
@@ -639,3 +648,116 @@ barberias
 
     5️⃣ Popup de felicitación + sellos
     6️⃣ Admin cancela / completa citas
+
+
+    <!-- ===== TARJETAS FIFA ===== -->
+                <div class="fifa-container"> <!-- Contenedor general -->
+
+                    <!-- Tarjeta -->
+                    <button class="fifa-card" data-cut="corte clasico">
+                        <img src="../img/cortes/corte6b.jpeg" alt="Urbano">
+                        <h3> Corte ⭐Profesional⭐</h3>
+                        <ul>
+                            <p>✂️ Corte de cabello ✂️</p>
+                            <p>✒️ Diseño de cejas ✒️</p>
+                            <p>🎓 Guía personalizada🎓</p>
+                            <p>💯 Calidad garantizada💯</p>
+                            <p>💵 Valor: 25.000💵</p>
+                        </ul>
+                    </button>
+
+                    <button class="fifa-card" data-cut="CORTE + CEJAS">
+                        <img src="../img/cortes/corte8b.jpeg" alt="Corte Clásico">
+                        <div class="servicio">
+                            <h3>Combo VIP ⭐Barba⭐</h3>
+                            <p>✂️ Corte de cabello ✂️</p>
+                            <p>🧔 Ritual de barba 🧔</p>
+                            <p>🎓 Asesoría de imagen 🎓</p>
+                            <p>💵 Valor: 25.000💵</p> 
+                        </div>
+                    </button>
+
+                    <button class="fifa-card" data-cut="CORTE ">
+                        <img src="../img/cortes/corte5b.jpeg" alt="Barba">
+                        <div class="servicio">
+                            <div class="servicio">
+                                <h3>Combo ⭐Definición⭐</h3>
+                                <p>✂️ Corte de cabello ✂️</p>
+                                <p>🧔 Arreglo de barba 🧔</p>
+                                <p>🤨 Diseño de cejas 🤨</p>
+                                <p>💵 Valor: 25.000💵</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button class="fifa-card" data-cut="lineas">
+                        <img src="../img/corte1.jpg" alt="Diseños">
+                         <div class="servicio"> 
+                                <h3>Combo ⭐Definición⭐</h3>
+                                <p>✂️ Corte de cabello ✂️</p>
+                                <p>🧔 Arreglo de barba 🧔</p>
+                                <p>🤨 Diseño de cejas 🤨</p>
+                                <p>💵 Valor: 25.000💵</p> 
+                            </div>         
+                    </button>
+                    <button class="fifa-card" data-cut="juvenil">
+                        <img src="../img/cortes/corte7b.jpeg" alt="Juvenil">
+                            <h3>Combo VIP  ⭐SpaBarber⭐</h3>
+                            <p>✂️ Corte de cabello ✂️</p>
+                            <p>🧔 Perfilado de barba 🧔</p>
+                            <p>🎭 Mascarilla facial 🎭</p>
+                            <p>💵 Valor: 25.000💵</p>
+                            
+                    </button>
+
+                    <button class="fifa-card" data-cut="premium">
+                        <img src="../img/corte2.jpg" alt="Premium">
+                        <div class="servicio">
+                            <h3>Corte VIP ⭐Profesional⭐</h3>
+                            <p>✂️ Corte de cabello✂️</p>
+                            <p>⚡Diseño Freestyle⚡</p>
+                            <p>🎓 Guía personalizada🎓</p>
+                            <p>💵 Valor: 25.000💵</p>                     
+                        </div>
+                    </button>
+                </div>
+                <!-- ===== FIN TARJETAS ===== -->
+
+
+Guardar cita
+
+↓
+
+Comprobar que funciona
+
+↓
+
+Subir la página
+
+↓
+
+Después mejorar UX
+
+↓
+
+Skeleton
+
+↓
+
+Servicios dinámicos
+
+↓
+
+Mensajes elegantes
+
+↓
+
+Panel administrador
+
+↓
+
+Dashboard
+
+↓
+
+Tienda
